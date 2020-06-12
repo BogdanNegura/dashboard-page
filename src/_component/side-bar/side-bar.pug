@@ -1,0 +1,17 @@
+input(type="checkbox" checked id="sidenav-close")
+section.sidenav
+    .sidenav-title__container
+        h1.sidenav-title My Account
+        +label(size="squre-border" icon="cheveron-right" to="sidenav-close")
+    .sidenav-user
+        include ../user/user
+    
+    .sidenav-menu
+        each menuLink, key in data.sidenav.menuLinkList 
+            input.sidenav-menu__input(
+                type="radio" 
+                id=`menu-link-${key}` 
+                name="menu-link"
+            )
+            +label(size="large", icon=menuLink.icon, to=`menu-link-${key}`)
+                span.label-text=menuLink.text

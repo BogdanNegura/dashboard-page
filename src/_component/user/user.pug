@@ -1,0 +1,28 @@
+.user
+    input(type="checkbox" id="drop-down-user")
+    .user-header
+        .user-star
+        .user-name Bogdan
+        .user-expand
+            +label(size="rounded-border" icon="cheveron-right" to="drop-down-user")
+        
+        .user-progress__bar-container
+            +progressbar("active", 60)
+
+    .user-body
+        +label(size="normal" icon="profile" to="user-dropdown")
+            +tooltip("middle-right", "1,846")
+        .user-body__hide
+            .user-body__score 1.846
+            +progressbar("normal", 75)
+            .user-body__top
+                span 1,203
+                span 345
+            .user-body__bottom
+                span Movie seen
+                span Movies until next level
+    .user-footer
+        +button("large", "secondary", "button")
+        +button("large", "primary", "button")
+        +button("large", "primary", "button", "plus")
+
