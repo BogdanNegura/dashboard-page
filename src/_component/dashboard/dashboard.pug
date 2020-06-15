@@ -1,0 +1,45 @@
+.dashboard
+    +cardFlashCorner("bonus-card")
+        .card-flash__corner-title Current score
+        .card-flash__corner-body
+            label.dashboard-label__add-movie(for="add-movie") Add movie in the que
+            .card-flash__corner-totalscore 1,846
+        .card-flash__corner-footer
+            +button("large", "primary wide", "collect bonus")
+
+    +cardFlashCorner("promotion-card")
+        .card-flash__corner-title Latest movies
+        .card-flash__corner-body
+            .promotion-list
+                each promotion in data.promotions
+                    .promotion-wraper
+                        .promotion-icon
+                        .promotion-details
+                            .promotion-description=promotion.title
+                            .promotion-date=promotion.time
+                        .promotion-watch
+                            +button("medium", "primary", "watch")
+
+    +cardFlashCorner("movie-card")
+        .card-flash__corner-title Popular Movies
+        .card-flash__corner-body__double
+            .movie-list
+                each movie, key in data.movies
+                    .movie-wrapper
+                        .movie-cover
+                            img(src=`${movie.cover}?${key}`, alt=`${movie.title}`, width="90", height="49")
+                        .movie-detail
+                            .movie-title=movie.title
+                            .movie-year=movie.year
+                        .movie-play
+                            +button("medium", "disc", "button", "play3")
+    input(type="checkbox", id="flip-card-label")
+    +cardFlashCorner("animated flip")
+        div
+        .card-flash__corner-body
+            .yellow-icon__smile
+            .flip-card__title JUST A RANDOM CARD
+            div.flip-card__content Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. 
+        .card-flash__corner-footer
+            +label(size="wide label-flip", "disc", "button", "play3", to="flip-card-label") Flip the card
+

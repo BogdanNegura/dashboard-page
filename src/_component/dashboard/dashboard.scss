@@ -1,0 +1,159 @@
+.dashboard {
+  width: 100%;
+  margin-left: 282px;
+  margin-right: 20px;
+  margin-top: 20px;
+  transition: 250ms;
+  height: 80%;
+  z-index: inherit;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 306px);
+  grid-gap: 20px;
+
+  .bonus-card {
+    grid-row: 1/3;
+  }
+
+  &-label__add-movie {
+    font-size: 13px;
+    font-weight: 500;
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  & .card-flash__corner-totalscore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 72px;
+    color: var(--color-cod-gray);
+  }
+}
+
+// promotion
+.promotion-card {
+  grid-column: 2/4;
+  margin-bottom: 40px;
+}
+
+.promotion-wraper {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-gap: 20px;
+  position: relative;
+  height: 85px;
+  margin: 0 -20px 0 -20px;
+  padding: 0 20px;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover::before {
+    transform: scaleX(1.5) skewX(45deg);
+  }
+
+  &::before {
+    transform: scaleX(0) skewX(45deg);
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-varden);
+    z-index: -1;
+    transition: 500ms;
+  }
+}
+
+.promotion-icon {
+  background-image: url(#{$baseUrl}asset/image/yellow.png);
+  width: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.promotion-details,
+.promotion-watch {
+  align-self: center;
+}
+
+.promotion-description {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.promotion-date {
+  font-size: 12px;
+}
+
+// movie
+.movie-list {
+  overflow-y: auto;
+}
+
+.movie-wrapper {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  grid-gap: 10px;
+  padding: 6px 20px 6px 20px;
+
+  &:hover {
+    background-color: var(--color-catskill-white);
+  }
+}
+
+.movie-cover img {
+  border-radius: 6px;
+}
+
+.movie-title {
+  font-size: 14px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.movie-year {
+  font-size: 12px;
+}
+
+.movie-play {
+  grid-column: 3/4;
+
+  .button {
+    cursor: pointer;
+  }
+}
+
+.movie-play,
+.movie-detail {
+  align-self: center;
+}
+
+.yellow-icon__smile {
+  background-image: url(#{$baseUrl}asset/image/smile.png);
+  width: 36px;
+  height: 36px;
+  margin: 0 auto;
+  margin-top: 24px;
+  margin-bottom: 26px;
+}
+
+.flip-card__title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.flip-card__content {
+  font-size: 14px;
+  text-align: center;
+}

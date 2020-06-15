@@ -13,10 +13,30 @@
     margin-right: 18px;
   }
 
+  &.wide {
+    height: 44px;
+    line-height: 44px;
+    width: 100%;
+    display: flex;
+    display: flex;
+    justify-content: center;
+  }
+
+  &.label-flip {
+    color: var(--color-trout);
+    border: 1px solid var(--color-mystic);
+    background-color: transparent;
+    text-transform: uppercase;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
   &.large {
     display: flex;
     justify-content: center;
-    height: 60px;
+    height: 50px;
     overflow: hidden;
     align-items: center;
     padding: 20px 24px;
@@ -99,7 +119,7 @@
   & + .sidenav {
     width: 262px;
 
-    label[for="user-dropdown"],
+    label[for="flip-card-label"],
     .button[class*="icon-"] {
       display: none;
     }
@@ -114,6 +134,10 @@
   }
 
   &:checked {
+    & ~ .dashboard {
+      margin-left: 110px;
+    }
+
     & + .sidenav {
       width: 90px;
 
@@ -139,7 +163,7 @@
         display: none;
       }
 
-      label[for="user-dropdown"] {
+      label[for="flip-card-label"] {
         display: initial;
         margin-bottom: 50px;
       }
@@ -180,5 +204,14 @@
     & + .user-header label[for="drop-down-user"] {
       transform: rotate(270deg);
     }
+  }
+}
+
+#flip-card-label {
+  display: none;
+
+  &:checked + .card-flash__corner-wrapper.animated.flip {
+    backface-visibility: visible;
+    animation-name: flip;
   }
 }
