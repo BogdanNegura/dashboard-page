@@ -1,5 +1,6 @@
 @import "_component/layout/general";
 @import "_component/config/color";
+@import "_component/config/common";
 @import "_component/mixin/progress-bar-mixin";
 @import "_component/mixin/label-mixin";
 @import "_component/mixin/tooltip-mixin";
@@ -8,5 +9,6 @@
 @import "_component/side-bar/side-bar";
 @import "_component/side-bar/side-bar";
 @import "_component/dashboard/dashboard";
+@import "_component/modal/modal";
 @import "_component/user/user";
 @import "_asset/font/font";

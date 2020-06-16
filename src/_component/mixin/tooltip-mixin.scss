@@ -1,32 +1,29 @@
 .tooltip {
-  border: 1px solid var(--color-trout);
+  @extend %centered;
   position: absolute;
-  background-color: #fff;
-  color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: -2px;
+  right: -105px;
   height: 28px;
-  padding: 0 24px;
   width: 45px;
+  padding: 0 24px;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid var(--color-trout);
   border-radius: 6px;
   opacity: 0;
   transition: 250ms;
   pointer-events: none;
 
-  right: -105px;
-  top: -2px;
-
   &::before {
     content: "";
-    border: 1px solid var(--color-gray);
     position: absolute;
-    background-color: white;
-    clip-path: polygon(0 0, 0 100%, 100% 0);
-    left: -5px;
     top: 8px;
+    left: -5px;
     width: 8px;
     height: 8px;
+    background-color: white;
+    border: 1px solid var(--color-gray);
+    clip-path: polygon(0 0, 0 100%, 100% 0);
     transform: rotateZ(-45deg);
   }
 }

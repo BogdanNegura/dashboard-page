@@ -1,0 +1,9 @@
+input(type="checkbox" name="add-modal-movie" id="add-modal-movie")
+label(for="add-modal-movie").modal
+    .modal-container
+        .modal-title Add new movie
+        .modal-body
+            input.modal-input(type="text", name="name", placeholder="Movie name")
+            input.modal-input(type="text", name="year", placeholder="Movie year")
+            +button("large", "secondary", "cencel")
+            +button("large", "primary", "add movie")
